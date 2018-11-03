@@ -9,16 +9,18 @@ const db = require ('./models');
 app.use(express.urlencoded({ extended: true}));
 app.use(express.json());
 
-app.use(express.static('public'));
+app.use(express.static('app/public'));
 
 
-require('./routing/api_routes.js')(app);
-// require('./routing/html_routes.js')(app);
+ const apiRoutes = require('./routing/api_routes.js');
+ app.use(apiRoutes);
+ const htmlRoutes = require('./routing/html_routes.js');
+ app.use(htmlRoutes);
 
 
 
 
-db.sequelize.sync().then(function(){
+db.sequelize.sync({}).then(function(){
     app.listen(PORT,function(){
         console.log(`App is listening on PORT` + PORT);
     });

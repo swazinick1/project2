@@ -15,7 +15,8 @@ module.exports = function(sequelize, DataTypes) {
         seq: {
             type: DataTypes.STRING,
         }
+        
 
-    });
+    },{timestamps:false});
     return KnownSeq;
 }

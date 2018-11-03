@@ -2,7 +2,7 @@ DROP DATABASE IF EXISTS patient_db;
 CREATE DATABASE patient_db;
 USE patient_db;
 
-CREATE TABLE patients (
+CREATE TABLE PatientData (    --this is changed table name
     id INT NOT NULL AUTO_INCREMENT,
     name VARCHAR(30) NOT NULL,
     birthdate VARCHAR(30) NOT NULL,
@@ -44,4 +44,24 @@ VALUES ("Huntingtons Disease", "Hereditary", "A,T,A,A,A,A,A,T");
 INSERT INTO known_seq (name, info, seq)
 VALUES ("Hemophilia", "Hereditary", "G,T,C,C,C,C,C,T");
 
-SELECT * FROM known_seq;
+INSERT INTO known_seq (name, info, seq)
+VALUES ("Osteoporosis", "Degenerative Bone Disease", "A,T,C,G,C,G,C,G,T,A");
+
+
+
+
+CREATE TABLE users (
+    id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(30) NOT NULL,
+    password VARCHAR(30) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+INSERT INTO users(name, password)
+VALUES ('Dr. Aslov', 'tacos');
+
+INSERT INTO users(name, password)
+VALUES ('Nick', 'tacos');
+
+INSERT INTO users(name, password)
+VALUES ('Dr.Smith', 'tacos');
