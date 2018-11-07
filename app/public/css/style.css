@@ -13,3 +13,21 @@
     
 }
 
+#patient-dropdown{
+    width: 500px;
+}
+
+#seqList{
+    width: 500px;
+    position:relative;
+    right:145px;
+    
+}
+
+#patientList{
+    list-style-type:none;
+}
+
+#diseaseList{
+    list-style-type: none;
+}
